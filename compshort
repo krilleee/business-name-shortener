@@ -1,0 +1,29 @@
+def shorten_company_name(company_name):
+    # Split company name
+    words = company_name.split()
+
+    # Check if there is two words in the company name
+    if len(words) >= 2:
+        # Check if the other word is "AB" (AB is like Corp in Sweden) and remove it
+        if words[1].upper() == "AB":
+            shortened_name = words[0].lower()
+        else:
+            # Take the first two words and make lowercase only
+            shortened_name = ' '.join(words[:2]).lower()
+    else:
+        # Only take the first word and change to lowercase only
+        shortened_name = words[0].lower()
+
+    # Remove space
+    shortened_name = shortened_name.replace(" ", "")
+
+    # shorten name to 8 characters
+    shortened_name = shortened_name[:8]
+
+    return shortened_name
+
+# Test
+company_name = input("Company name: ")
+shortened_name = shorten_company_name(company_name)
+
+print("Username: ", shortened_name)
