@@ -19,6 +19,17 @@ def shorten_company_name(company_name):
     # Remove space
     shortened_name = shortened_name.replace(" ", "")
 
+    # Replace unwanted characters
+    shortened_name = shortened_name.replace("å", "a")
+    shortened_name = shortened_name.replace("ä", "a")
+    shortened_name = shortened_name.replace("ö", "o")
+    shortened_name = shortened_name.replace("é", "e")
+    shortened_name = shortened_name.replace("/", "")
+    shortened_name = shortened_name.replace("´", "")
+    shortened_name = shortened_name.replace("-", "")
+    shortened_name = shortened_name.replace(".", "")
+    shortened_name = shortened_name.replace("’", "")
+
     return shortened_name
 
 # Path to Excel document
